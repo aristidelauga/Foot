@@ -12,7 +12,7 @@ struct LeagueList: View {
   @ObservedObject var teamViewModel: TeamViewModel
   var text: String
   var body: some View {
-    ForEach(leagueViewModel.leagues.filter { $0.strLeague.localizedCaseInsensitiveContains(teamViewModel.text)}) { suggestion in
+    ForEach(leagueViewModel.reorderedLeague(teamViewModel.text)) { suggestion in
       Text(suggestion.strLeague)
         .searchCompletion(suggestion.strLeague)
     }

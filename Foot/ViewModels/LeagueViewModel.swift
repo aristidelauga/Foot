@@ -15,4 +15,8 @@ class LeagueViewModel: ObservableObject {
       self.leagues = try await LeagueAPICall.fetchLeagues()
     }
   }
+  
+  func reorderedLeague(_ text: String) -> [League] {
+    return self.leagues.filter { $0.strLeague.localizedCaseInsensitiveContains(text)}
+  }
 }

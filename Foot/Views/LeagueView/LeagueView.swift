@@ -26,9 +26,6 @@ struct LeagueView: View {
       }
     })
     .onSubmit(of: .search) {
-//      Task {
-//        teamViewModel.teams = try await TeamAPICall.fetchTeams(from: teamViewModel.text)
-//      }
       Task {
         do {
           try await teamViewModel.fetchTeam(from: teamViewModel.text)

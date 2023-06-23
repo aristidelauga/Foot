@@ -15,16 +15,11 @@ struct TeamCell: View {
   ]
   var body: some View {
     LazyVGrid(columns: columns, alignment: .center) {
-        ForEach(teamViewModel.teams) { team in
-          VStack {
-            AsyncImage(url: URL(string: team.strTeamBadge ?? "")) { image in
-              image.resizable()
-                .frame(maxWidth: 180, maxHeight: 240)
-                .aspectRatio(contentMode: .fill)
-            } placeholder: { ProgressView() }
-            Text(team.strTeam ?? "")
-          }
+      ForEach(teamViewModel.teams) { team in
+        NavigationLink(destination: TeamDetailView(team: team)) {
+          TeamContent(team: team)
         }
+      }
     }
   }
 }

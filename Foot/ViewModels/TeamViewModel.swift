@@ -8,31 +8,12 @@
 import Combine
 import Foundation
 
+
 class TeamViewModel: ObservableObject {
   @Published var teams = [Team]()
   @Published var text = ""
-  //  {
-  //    didSet {
-  //      print(text)
-  //      Task {
-  //        do {
-  //          teams = try await TeamAPICall.fetchTeams(from: text)
-  //        } catch {
-  //          throw FetchingError.decodingIssue
-  //        }
-  //      }
-  //    }
-  //  }
   
-  //  func fetchTeams(from league: String) async throws  {
-  //    do {
-  //      self.teams = try await TeamAPICall.fetchTeams(from: league)
-  //    } catch {
-  //      print("Error fetching teams related data")
-  //    }
-  //  }
-  
-   func filterTeams(from team: [Team]) -> [Team] {
+  internal func filterTeams(from team: [Team]) -> [Team] {
     var filteredTeams: [Team] = []
     for index in 0..<teams.count {
       if (index % 2) == 0 {
@@ -77,6 +58,4 @@ class TeamViewModel: ObservableObject {
     self.teams = filterTeams(from: self.teams)
     
   }
- 
-
 }

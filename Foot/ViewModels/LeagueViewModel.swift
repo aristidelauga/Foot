@@ -7,9 +7,10 @@
 
 import Foundation
 
+@MainActor
 class LeagueViewModel: ObservableObject {
   @Published var leagues: [League] = []
-
+  
   init() {
     Task {
       self.leagues = try await LeagueAPICall.fetchLeagues()

@@ -13,6 +13,7 @@ struct TeamDetailView: View {
     ScrollView(.vertical, showsIndicators: false) {
       VStack(alignment: .leading, spacing: 5) {
         BannerView(team: team)
+          .frame(alignment: .center)
         VStack(alignment: .leading, spacing: 5) {
           Text(team.strCountry ?? "")
           Text(team.strLeague ?? "")

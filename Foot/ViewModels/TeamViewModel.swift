@@ -8,7 +8,7 @@
 import Combine
 import Foundation
 
-
+@MainActor
 class TeamViewModel: ObservableObject {
   @Published var teams = [Team]()
   @Published var text = ""

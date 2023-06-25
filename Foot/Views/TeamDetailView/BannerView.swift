@@ -12,6 +12,7 @@ struct BannerView: View {
   var body: some View {
     AsyncImage(url: URL(string: team.strTeamBanner ?? "")) { image in
       image.resizable()
+		// Ne pas utiliser UISCreen.main.bounds.width
         .frame(maxWidth: UIScreen.main.bounds.width)
         .aspectRatio(contentMode: .fit)
     } placeholder: { ProgressView() }

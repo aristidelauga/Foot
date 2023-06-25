@@ -7,8 +7,11 @@
 
 import Foundation
 
+// Nomage à améliorer
+// Pourquoi passer par une class ?
 class TeamAPICallManager {
-  
+
+// Le sample n'a rien à faire ici
   var sample = Team(
     idTeam: "133714",
     strTeam: "Paris SG",

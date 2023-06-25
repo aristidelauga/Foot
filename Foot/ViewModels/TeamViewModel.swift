@@ -24,7 +24,8 @@ class TeamViewModel: ObservableObject {
     filteredTeams = filteredTeams.sorted { $1.strTeam ?? "" < $0.strTeam ?? "" }
     return filteredTeams
   }
-  
+
+  // Utilisation du main actor inutile
   @MainActor
   func fetchTeam(from league: String) async throws {
     Task {

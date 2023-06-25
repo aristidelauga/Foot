@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+// Preview affiche rien
 struct LeagueList: View {
   @ObservedObject var leagueViewModel: LeagueViewModel
   @ObservedObject var teamViewModel: TeamViewModel

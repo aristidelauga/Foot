@@ -81,7 +81,7 @@
 				926517342A435D07002FDFB2 /* Models */,
 				926517352A435D0E002FDFB2 /* Views */,
 				926517362A435D16002FDFB2 /* ViewModels */,
-				926517452A44802F002FDFB2 /* APICalls */,
+				926517452A44802F002FDFB2 /* API */,
 				9265173D2A446124002FDFB2 /* Extensions */,
 				9265172A2A435A9A002FDFB2 /* Assets.xcassets */,
 				9265172C2A435A9A002FDFB2 /* Preview Content */,
@@ -142,14 +142,14 @@
 			path = LeagueViewComponents;
 			sourceTree = "<group>";
 		};
-		926517452A44802F002FDFB2 /* APICalls */ = {
+		926517452A44802F002FDFB2 /* API */ = {
 			isa = PBXGroup;
 			children = (
 				926517432A447C77002FDFB2 /* LeagueAPICallManager.swift */,
 				9265174A2A44E3E1002FDFB2 /* TeamAPICallManager.swift */,
 				926517462A448068002FDFB2 /* FetchingError.swift */,
 			);
-			path = APICalls;
+			path = API;
 			sourceTree = "<group>";
 		};
 		926517502A460AD2002FDFB2 /* LeagueView */ = {

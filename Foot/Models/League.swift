@@ -11,6 +11,7 @@ struct SoccerLeague: Codable {
   let leagues: [League]
 }
 
+// J'ai du mal à comprendre les noms des propriétés, tu peux améliorer ça via CodingKey.
 struct League: Codable, Identifiable {
   var id: String { return idLeague }
   let idLeague: String

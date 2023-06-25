@@ -7,6 +7,8 @@
 
 import Foundation
 
+// Nomage à améliorer, ce n'est pas un manager.
+// Mettre dans une struct
 class LeagueAPICallManager {
   func fetchLeagues() async throws -> [League] {
     let league = Task { () -> [League] in

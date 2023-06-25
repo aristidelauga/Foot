@@ -7,6 +7,9 @@
 
 import SwiftUI
 
+// La preview affiche rien
+// Pas vraiment une cell si je comprends bien le code
+// Donc nomage a expliciter
 struct TeamCell: View {
   @ObservedObject var teamViewModel: TeamViewModel
   private let columns = [

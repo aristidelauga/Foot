@@ -33,7 +33,6 @@ struct LeagueView: View {
           print(error.localizedDescription)
         }
       }
-//      UIApplication.shared.dismissKeyboard()
     }
   }
 }

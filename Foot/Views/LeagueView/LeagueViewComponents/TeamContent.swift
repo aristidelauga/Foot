@@ -22,7 +22,8 @@ struct TeamContent: View {
 }
 
 struct TeamContent_Previews: PreviewProvider {
+  static var teamAPICallManager = TeamAPICallManager()
     static var previews: some View {
-      TeamContent(team: Team.sample)
+      TeamContent(team: teamAPICallManager.sample)
     }
 }

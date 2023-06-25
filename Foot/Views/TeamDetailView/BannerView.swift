@@ -19,7 +19,8 @@ struct BannerView: View {
 }
 
 struct BannerView_Previews: PreviewProvider {
+  static var teamAPICallManager = TeamAPICallManager()
   static var previews: some View {
-    BannerView(team: Team.sample)
+    BannerView(team: teamAPICallManager.sample)
   }
 }

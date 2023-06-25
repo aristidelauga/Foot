@@ -34,7 +34,8 @@ struct TeamDetailView: View {
 }
 
 struct TeamDetailView_Previews: PreviewProvider {
+  static var teamAPICallManager = TeamAPICallManager()
   static var previews: some View {
-    TeamDetailView(team: Team.sample)
+    TeamDetailView(team: teamAPICallManager.sample)
   }
 }

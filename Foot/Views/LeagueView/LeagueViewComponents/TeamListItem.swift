@@ -24,6 +24,6 @@ struct TeamListItem: View {
 
 struct TeamListItem_Previews: PreviewProvider {
     static var previews: some View {
-      TeamListItem(team: TeamSample.sample)
+		TeamListItem(team: Team.sample)
     }
 }

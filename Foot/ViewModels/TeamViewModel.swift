@@ -12,7 +12,7 @@ class TeamViewModel: ObservableObject {
   @Published var teams = [Team]()
   @Published var text = ""
   
-  private var teamAPICall = TeamAPICallManager()
+  private var teamAPICall = TeamAPICall()
   
   internal func filterTeams(from team: [Team]) -> [Team] {
     var filteredTeams: [Team] = []
@@ -21,10 +21,10 @@ class TeamViewModel: ObservableObject {
         filteredTeams.append(teams[index])
       }
     }
-    filteredTeams = filteredTeams.sorted { $1.strTeam ?? "" < $0.strTeam ?? "" }
+    filteredTeams = filteredTeams.sorted { $1.teamName ?? "" < $0.teamName ?? "" }
     return filteredTeams
   }
-  
+
   @MainActor
   func fetchTeam(from league: String) async throws {
     Task {

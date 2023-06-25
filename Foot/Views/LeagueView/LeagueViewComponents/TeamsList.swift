@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct TeamCell: View {
+// La preview affiche rien
+struct TeamsList: View {
   @ObservedObject var teamViewModel: TeamViewModel
   private let columns = [
     GridItem(.fixed(UIScreen.main.bounds.width / 2), spacing: 5),
@@ -17,7 +18,7 @@ struct TeamCell: View {
     LazyVGrid(columns: columns, alignment: .center) {
       ForEach(teamViewModel.teams) { team in
         NavigationLink(destination: TeamDetailView(team: team)) {
-          TeamContent(team: team)
+          TeamListItem(team: team)
         }
       }
     }
@@ -26,6 +27,6 @@ struct TeamCell: View {
 
 struct TeamCell_Previews: PreviewProvider {
   static var previews: some View {
-    TeamCell(teamViewModel: TeamViewModel())
+    TeamsList(teamViewModel: TeamViewModel())
   }
 }

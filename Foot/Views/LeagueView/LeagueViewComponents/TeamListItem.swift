@@ -7,23 +7,23 @@
 
 import SwiftUI
 
-struct TeamContent: View {
+struct TeamListItem: View {
   var team: Team
     var body: some View {
       VStack {
-        AsyncImage(url: URL(string: team.strTeamBadge ?? "")) { image in
+        AsyncImage(url: URL(string: team.teamBadge ?? "")) { image in
           image.resizable()
-            .frame(maxWidth: 180, maxHeight: 240)
+            .frame(maxWidth: 180, maxHeight: 220)
             .aspectRatio(contentMode: .fill)
         } placeholder: { ProgressView() }
-        Text(team.strTeam ?? "")
+		  // Pas demandé sur la maquette du test
+        Text(team.teamName ?? "")
       }
     }
 }
 
-struct TeamContent_Previews: PreviewProvider {
-  static var teamAPICallManager = TeamAPICallManager()
+struct TeamListItem_Previews: PreviewProvider {
     static var previews: some View {
-      TeamContent(team: teamAPICallManager.sample)
+      TeamListItem(team: TeamSample.sample)
     }
 }

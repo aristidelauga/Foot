@@ -7,7 +7,7 @@
 
 import Foundation
 
-class LeagueAPICallManager {
+struct LeagueAPICall {
   func fetchLeagues() async throws -> [League] {
     let league = Task { () -> [League] in
       guard let url = URL(string: "https://www.thesportsdb.com/api/v1/json/50130162/all_leagues.php") else {

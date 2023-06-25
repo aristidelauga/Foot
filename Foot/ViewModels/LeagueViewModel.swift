@@ -10,7 +10,7 @@ import Foundation
 class LeagueViewModel: ObservableObject {
   @Published var leagues: [League] = []
   
-  private var leagueAPIManager = LeagueAPICallManager()
+  private var leagueAPIManager = LeagueAPICall()
   
   init() {
     Task { [weak self] in
@@ -30,6 +30,6 @@ class LeagueViewModel: ObservableObject {
   }
   
   func reorderedLeague(_ text: String) -> [League] {
-    return self.leagues.filter { $0.strLeague.localizedCaseInsensitiveContains(text)}
+    return self.leagues.filter { $0.leagueName.localizedCaseInsensitiveContains(text)}
   }
 }

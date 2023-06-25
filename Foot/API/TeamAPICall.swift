@@ -7,7 +7,7 @@
 
 import Foundation
 
-class TeamAPICall {
+struct TeamAPICall {
 
   
   func fetchTeams(from league: String) async throws -> [Team] {

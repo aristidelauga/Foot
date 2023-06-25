@@ -14,6 +14,7 @@ struct TeamsList: View {
     GridItem(.fixed(UIScreen.main.bounds.width / 2), spacing: 5),
     GridItem(.fixed(UIScreen.main.bounds.width / 2), spacing: 5)
   ]
+
   var body: some View {
     LazyVGrid(columns: columns, alignment: .center) {
       ForEach(teamViewModel.teams) { team in

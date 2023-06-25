@@ -9,34 +9,44 @@ import Foundation
 import UIKit
 
 class TeamViewModel: ObservableObject {
-  @Published var teams = [Team]()
-  @Published var text = ""
-  
-  private var teamAPICall = TeamAPICall()
-  
-  internal func filterTeams(from team: [Team]) -> [Team] {
-    var filteredTeams: [Team] = []
-    for index in 0..<teams.count {
-      if (index % 2) == 0 {
-        filteredTeams.append(teams[index])
-      }
-    }
-    filteredTeams = filteredTeams.sorted { $1.teamName ?? "" < $0.teamName ?? "" }
-    return filteredTeams
-  }
+	@Published var teams = [Team]()
+	@Published var text = ""
 
-  @MainActor
-  func fetchTeam(from league: String) async throws {
-    Task {
-      do {
-        self.teams = try await teamAPICall.fetchTeams(from: league)
-        self.teams = filterTeams(from: self.teams)
-      } catch {
-        print(error.localizedDescription)
-      }
-    }
-    UIApplication.shared.dismissKeyboard()
-  }
-  
-  
+	private var teamAPICall = TeamAPICall()
+
+	func searchTeam(from userEntry: String) {
+		Task {
+			do {
+				try await fetchTeam(from: text)
+			} catch {
+				print(error.localizedDescription)
+			}
+		}
+	}
+	
+	private func filterTeams(from team: [Team]) -> [Team] {
+		var filteredTeams: [Team] = []
+		for index in 0..<teams.count {
+			if (index % 2) == 0 {
+				filteredTeams.append(teams[index])
+			}
+		}
+		filteredTeams = filteredTeams.sorted { $1.teamName ?? "" < $0.teamName ?? "" }
+		return filteredTeams
+	}
+
+	@MainActor
+	private func fetchTeam(from league: String) async throws {
+		Task {
+			do {
+				self.teams = try await teamAPICall.fetchTeams(from: league)
+				self.teams = filterTeams(from: self.teams)
+			} catch {
+				print(error.localizedDescription)
+			}
+		}
+		UIApplication.shared.dismissKeyboard()
+	}
+
+
 }

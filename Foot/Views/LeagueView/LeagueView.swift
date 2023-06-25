@@ -26,13 +26,7 @@ struct LeagueView: View {
       }
     })
     .onSubmit(of: .search) {
-      Task {
-        do {
-          try await teamViewModel.fetchTeam(from: teamViewModel.text)
-        } catch {
-          print(error.localizedDescription)
-        }
-      }
+		teamViewModel.searchTeam(from: teamViewModel.text)
     }
   }
 }

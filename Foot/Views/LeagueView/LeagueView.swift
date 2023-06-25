@@ -17,7 +17,7 @@ struct LeagueView: View {
   var body: some View {
     NavigationStack {
       ScrollView(.vertical, showsIndicators: false) {
-        TeamCell(teamViewModel: teamViewModel)
+        TeamsList(teamViewModel: teamViewModel)
       }
     }
     .searchable(text: $teamViewModel.text, prompt: "Search by league", suggestions: {

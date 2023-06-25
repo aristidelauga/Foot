@@ -14,8 +14,8 @@ struct LeagueList: View {
   var text: String
   var body: some View {
     ForEach(leagueViewModel.reorderedLeague(teamViewModel.text)) { suggestion in
-      Text(suggestion.strLeague)
-        .searchCompletion(suggestion.strLeague)
+      Text(suggestion.leagueName)
+        .searchCompletion(suggestion.leagueName)
     }
   }
 }

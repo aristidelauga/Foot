@@ -15,27 +15,26 @@ struct TeamDetailView: View {
         BannerView(team: team)
           .frame(alignment: .center)
         VStack(alignment: .leading, spacing: 5) {
-          Text(team.strCountry ?? "")
-          Text(team.strLeague ?? "")
+          Text(team.countryName ?? "")
+          Text(team.leagueName ?? "")
             .bold()
         }
         .padding(.leading, 5)
         
         HStack {
           Spacer()
-          Text(team.strDescriptionFR ?? team.strDescriptionEN ?? "")
+          Text(team.teamDescriptionFR ?? team.teamDescriptionEN ?? "")
           Spacer()
         }
       }
-      .navigationBarTitle(team.strTeam ?? "")
+      .navigationBarTitle(team.teamName ?? "")
       .navigationBarTitleDisplayMode(.inline)
     }
   }
 }
 
 struct TeamDetailView_Previews: PreviewProvider {
-  static var teamAPICallManager = TeamAPICallManager()
   static var previews: some View {
-    TeamDetailView(team: teamAPICallManager.sample)
+    TeamDetailView(team: TeamSample.sample)
   }
 }

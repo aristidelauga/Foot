@@ -129,6 +129,7 @@
 		9265173D2A446124002FDFB2 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				921E4AE72A488442009A0EA0 /* TeamSample.swift */,
 				9265173E2A44613A002FDFB2 /* UIApplication+Extension.swift */,
 			);
 			path = Extensions;
@@ -150,7 +151,6 @@
 				926517432A447C77002FDFB2 /* LeagueAPICall.swift */,
 				9265174A2A44E3E1002FDFB2 /* TeamAPICall.swift */,
 				926517462A448068002FDFB2 /* FetchingError.swift */,
-				921E4AE72A488442009A0EA0 /* TeamSample.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";

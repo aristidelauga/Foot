@@ -7,8 +7,9 @@
 
 import Foundation
 
-struct TeamAPICall {
-  static func fetchTeams(from league: String) async throws -> [Team] {
+class TeamAPICallManager {
+  
+  func fetchTeams(from league: String) async throws -> [Team] {
     
     var teamURL: URLComponents {
       var teamComponents = URLComponents()

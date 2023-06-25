@@ -7,13 +7,25 @@
 
 import Foundation
 
-@MainActor
 class LeagueViewModel: ObservableObject {
   @Published var leagues: [League] = []
   
+  private var leagueAPIManager = LeagueAPICallManager()
+  
   init() {
+    Task { [weak self] in
+      await self?.loadLeagues()
+    }
+  }
+  
+  @MainActor
+  func loadLeagues() {
     Task {
-      self.leagues = try await LeagueAPICall.fetchLeagues()
+      do {
+        self.leagues = try await leagueAPIManager.fetchLeagues()
+      } catch {
+        print(error.localizedDescription)
+      }
     }
   }
   

@@ -102,7 +102,6 @@
 			children = (
 				926517372A445FFF002FDFB2 /* League.swift */,
 				926517392A446048002FDFB2 /* Team.swift */,
-				926517462A448068002FDFB2 /* FetchingError.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -148,6 +147,7 @@
 			children = (
 				926517432A447C77002FDFB2 /* LeagueAPICallManager.swift */,
 				9265174A2A44E3E1002FDFB2 /* TeamAPICallManager.swift */,
+				926517462A448068002FDFB2 /* FetchingError.swift */,
 			);
 			path = APICalls;
 			sourceTree = "<group>";

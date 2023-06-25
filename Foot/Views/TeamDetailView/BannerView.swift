@@ -11,7 +11,8 @@ struct BannerView: View {
   var team: Team
   var body: some View {
     AsyncImage(url: URL(string: team.teamBanner ?? "")) { image in
-      image.resizable()
+      image
+		.resizable()
         .frame(maxWidth: .infinity)
         .frame(height: 120)
         .aspectRatio(contentMode: .fit)

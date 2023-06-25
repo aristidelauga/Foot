@@ -1,5 +1,5 @@
 //
-//  TeamContent.swift
+//  TeamImageView.swift
 //  Foot
 //
 //  Created by Aristide LAUGA on 23/06/2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TeamListItem: View {
+struct TeamImageView: View {
 	var team: Team
 	var body: some View {
 		AsyncImage(url: URL(string: team.teamBadge ?? "")) { image in
@@ -17,8 +17,8 @@ struct TeamListItem: View {
 	}
 }
 
-struct TeamListItem_Previews: PreviewProvider {
+struct TeamImageView_Previews: PreviewProvider {
 	static var previews: some View {
-		TeamListItem(team: TeamSample.sample)
+		TeamImageView(team: Team.teamSample)
 	}
 }

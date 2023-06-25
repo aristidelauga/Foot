@@ -19,7 +19,7 @@ struct TeamsList: View {
     LazyVGrid(columns: columns, alignment: .center) {
       ForEach(teamViewModel.teams) { team in
         NavigationLink(destination: TeamDetailView(team: team)) {
-          TeamListItem(team: team)
+			TeamImageView(team: team)
         }
       }
     }

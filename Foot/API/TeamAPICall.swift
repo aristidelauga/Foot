@@ -7,9 +7,7 @@
 
 import Foundation
 
-class TeamAPICall {
-
-  
+struct TeamAPICall {
   func fetchTeams(from league: String) async throws -> [Team] {
     
     var teamURL: URLComponents {
@@ -20,7 +18,7 @@ class TeamAPICall {
       teamComponents.queryItems = [URLQueryItem(name: "l", value: league)]
       return teamComponents
     }
-    
+
     let teams = Task { () -> [Team] in
       
       guard let url = teamURL.url else {
